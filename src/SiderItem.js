@@ -23,7 +23,7 @@ function SiderItem(){
             <Menu.Item key="5">選單{e}-5 </Menu.Item>
             <Menu.Item key="6">選單{e}-6 </Menu.Item>
             <Menu.Item key="7">選單{e}-7 </Menu.Item>
-            <Menu.Item key="8">選單{e}-8 </Menu.Item>
+            <Menu.Item key="8">菜單{e}-8 </Menu.Item>
         </SubMenu>;
     };
 
