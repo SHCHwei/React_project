@@ -1,10 +1,10 @@
-import './App.css';
 import React from "react";
 import {Layout, Menu } from "antd";
 import Contents from './Contents.js'
 import MenuItem from './MenuItem.js'
 import SiderItem from './SiderItem.js'
 import SliderRight from './SliderRight.js';
+import '../css/App.css';
 
 
 const { Header, Content, Sider, Footer } = Layout;

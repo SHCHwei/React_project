@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import './index.css';
-import App from './App.js';
+import './css/index.css';
+import App from './Dcard/App.js';
 import reportWebVitals from './reportWebVitals';
 
 
