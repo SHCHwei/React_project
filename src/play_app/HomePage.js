@@ -13,10 +13,12 @@ const HomePage = ()=>{
     }
     return(
         <div style={StyleSheet}>
-            <h1 style={{color:"white",fontFamily:"Microsoft JhengHei"}}>首頁</h1>
+            <h1 style={{color:"white",fontFamily:"Microsoft JhengHei"}}>打球報噗累</h1>
             <nav>
-                <Link to="/page1">PAGE1</Link> |{" "}
-                <Link to="/page2">PAGE2</Link>
+                <Link to="/page1">男一</Link> | {" "} <Link to="/page1">男二</Link> | {" "} <Link to="/page1">男三</Link>
+            </nav>
+            <nav>
+                <Link to="/page1">女一</Link> | {" "} <Link to="/page1">女二</Link> | {" "} <Link to="/page1">女三</Link>
             </nav>
         </div>
     )
