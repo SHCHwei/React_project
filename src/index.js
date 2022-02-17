@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './css/index.css';
-import App from './Dcard/App.js';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 

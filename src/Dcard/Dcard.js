@@ -10,7 +10,7 @@ import '../css/App.css';
 const { Header, Content, Sider, Footer } = Layout;
 const { SubMenu } = Menu;
 
-class App extends React.Component{
+class Dcard extends React.Component{
     render(){
         return (
             <Layout className="layout">
@@ -38,4 +38,4 @@ class App extends React.Component{
     }
 }
 
-export default App;
+export default Dcard;
