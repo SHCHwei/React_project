@@ -1,11 +1,23 @@
 import React  from 'react';
 import {Layout, List, Button, Modal, Form, Input} from "antd";
-import jsonData from "src/file/team.json";
+import axios from 'axios';
 
 const FirstPage=()=>{
     const { Header, Content,  Footer } = Layout;
+    let response = null;
 
-    console.log(jsonData);
+    const apiRequest = axios.create({
+        baseURL: "http://localhost:8099",
+        method: 'post',
+        withCredentials: true,
+    });
+
+    /*
+    await apiRequest.post('', formData) //依功能不同須執行不同API
+        .then(res => {
+            response = JSON.parse(res.request.response);
+        })
+    */
 
     const updateView = (state, action) => {
         switch(action.type) {
@@ -34,7 +46,7 @@ const FirstPage=()=>{
                     <div className="site-layout-content" style={{background: '#ffffff'}}>
                         <List
                             itemLayout="horizontal"
-                            dataSource={jsonData}
+                            dataSource={""}
                             renderItem={ item => (
                                 <List.Item>
                                     <List.Item.Meta
