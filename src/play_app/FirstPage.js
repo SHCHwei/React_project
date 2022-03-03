@@ -2,27 +2,38 @@ import React  from 'react';
 import {Layout, List, Button, Modal, Form, Input} from "antd";
 import axios from 'axios';
 
+
+
+
+
 const FirstPage=()=>{
     const { Header, Content,  Footer } = Layout;
-    let response = null;
 
-    const apiRequest = axios.create({
-        baseURL: "http://localhost:8099",
-        method: 'post',
-        withCredentials: true,
-    });
 
-    /*
-    await apiRequest.post('', formData) //依功能不同須執行不同API
-        .then(res => {
-            response = JSON.parse(res.request.response);
+    const getData = async () => {
+
+
+        const response =  await axios({
+            method: 'get',
+            url: 'http://192.168.99.137:8099/json',
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
         })
-    */
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
+
+        console.log("response",response);
+    }
+
+    getData();
 
     const updateView = (state, action) => {
         switch(action.type) {
             case 'showModal':
                 return {...state, modalShow: true};
+            default:
             case 'offModal':
                 return {...state, modalShow: false};
         }

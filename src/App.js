@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 const App=()=>{
     return(
         <Routes>
+            <Route path="/" element={<HomePage />}/>
             <Route path="/home" element={<HomePage />}/>
             <Route path="/page1" element={<FirstPage />}/>
             <Route path="/page2" element={<SecondPage />}/>
