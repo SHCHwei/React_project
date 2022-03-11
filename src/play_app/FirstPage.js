@@ -15,10 +15,10 @@ const FirstPage=()=>{
 
         const response =  await axios({
             method: 'get',
-            url: 'http://192.168.99.137:8099/json',
+            url: 'http://localhost:8099/',
             withCredentials: true,
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
         })
             .then((response) => console.log(response))
