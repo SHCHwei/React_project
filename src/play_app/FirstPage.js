@@ -1,48 +1,39 @@
 import React  from 'react';
 import {Layout, List, Button, Modal, Form, Input} from "antd";
-import axios from 'axios';
+import {TeamList} from "./api.js";
 
-
-
-
+const updateView = (state, action) => {
+    switch(action.type) {
+        case 'showModal':
+            return {...state, modalShow: true};
+        default:
+        case 'offModal':
+            return {...state, modalShow: false};
+    }
+}
 
 const FirstPage=()=>{
     const { Header, Content,  Footer } = Layout;
+    const [state, dispatch] = React.useReducer(updateView, {
+        modalShow: true,
+        modalData: '',
+        data: null
+    });
 
 
     const getData = async () => {
 
+        const list = await TeamList();
+        console.log(list);
 
-        const response =  await axios({
-            method: 'get',
-            url: 'http://localhost:8099/',
-            withCredentials: true,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((response) => console.log(response))
-            .catch((error) => console.log(error));
-
-        console.log("response",response);
     }
 
-    getData();
 
-    const updateView = (state, action) => {
-        switch(action.type) {
-            case 'showModal':
-                return {...state, modalShow: true};
-            default:
-            case 'offModal':
-                return {...state, modalShow: false};
-        }
-    }
+    React.useEffect(()=>{
 
-    const [state, dispatch] = React.useReducer(updateView, {
-        modalShow: true,
-        modalData: ''
-    });
+        getData();
+
+    },[]);
 
 
     return(
