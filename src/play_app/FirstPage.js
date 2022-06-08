@@ -9,6 +9,8 @@ const updateView = (state, action) => {
         default:
         case 'offModal':
             return {...state, modalShow: false};
+        case 'setData':
+            return {...state, data: action.data};
     }
 }
 
@@ -25,7 +27,7 @@ const FirstPage=()=>{
 
         const list = await TeamList();
         console.log(list);
-
+        dispatch({type: "setData", data: list});
     }
 
 
@@ -33,10 +35,11 @@ const FirstPage=()=>{
 
         getData();
 
-    },[]);
+    },[state.data]);
 
 
-    return(
+    return(state.data == null)?
+        <p>報撲類</p>:
         <>
             <Layout className="layout">
                 <Header>
@@ -92,8 +95,7 @@ const FirstPage=()=>{
 
 
             </Modal>
-        </>
-    )
+        </>;
 }
 
 export default FirstPage;

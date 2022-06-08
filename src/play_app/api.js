@@ -7,8 +7,8 @@ let config = {
 };
 
 export const getRequest = axios.create({
-    baseURL: "http://localhost:8099/",
-    method: 'get',
+    baseURL: "http://localhost:8099",
+    method: 'post',
     withCredentials: true,
 });
 
@@ -16,7 +16,10 @@ export const getRequest = axios.create({
 
 
 export const apiModel = async(axiosname, name, data)=> {
-    let response = await axiosname.post(url, data, config);
+    let response = await axiosname.post(name, data, config);
+    return response;
 }
 
-export const TeamList = async() => await  apiModel(getRequest, '/' )
+export const TeamList = async() => await apiModel(getRequest, '/' , null)
+
+export const TeamList2 = async() => await apiModel(getRequest, '/json' , null);
