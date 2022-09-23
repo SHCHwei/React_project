@@ -1,5 +1,6 @@
 import React  from 'react';
 import {Layout, List, Button, Modal, Form, Input} from "antd";
+import {TeamList} from "./api.js";
 
 const updateView = (state, action) => {
     switch(action.type) {
@@ -22,12 +23,10 @@ const FirstPage=()=>{
     });
 
 
-    const getData = async () => {
-
-        const response = await fetch('http://localhost:8099/');
-        const data = await response.json();
-
-        dispatch({type: "setData", data: data.Teams});
+    const getData = async () =>
+    {
+        const list = await TeamList();
+        dispatch({type: "setData", data: list.data});
     }
 
 
